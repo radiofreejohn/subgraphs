@@ -14,32 +14,11 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - Approval
-        - ApprovalForAll
-        - EIP712DomainChanged
-        - OperatorAllowlistRegistryUpdated
-        - RoleAdminChanged
-        - RoleGranted
-        - RoleRevoked
         - Transfer
       abis:
         - name: guild
           file: ./abis/guild.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: EIP712DomainChanged()
-          handler: handleEIP712DomainChanged
-        - event: OperatorAllowlistRegistryUpdated(address,address)
-          handler: handleOperatorAllowlistRegistryUpdated
-        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
-          handler: handleRoleAdminChanged
-        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleGranted
-        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleRevoked
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
       file: ./src/guild.ts
