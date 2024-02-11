@@ -4,7 +4,7 @@ schema:
 dataSources:
   - kind: ethereum
     name: guild
-    network: mainnet
+    network: imtbl-zkevm-testnet 
     source:
       address: "0xD2c0e3119C67d7A21fFC74383fB10e510F706A45"
       abi: guild
