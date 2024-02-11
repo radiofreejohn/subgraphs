@@ -45,11 +45,11 @@ export function handleTransfer(event: TransferEvent): void {
     if(!symbol.reverted) {
         tokenContract.symbol = normalize(symbol.value);
     }
-    tokenContract.save()
+    tokenContract.save();
   }
-  let token = Token.load(id)
+  let token = Token.load(id);
   if(token == null){
-    token = new Token(id)
+    token = new Token(id);
     token.contract = tokenContract.id;
     token.tokenID = tokenId;
     token.mintTime = event.block.timestamp;
@@ -59,29 +59,29 @@ export function handleTransfer(event: TransferEvent): void {
     } else {
         token.tokenURI = "";
     }
-    token.save()
+    token.save();
   }
 
   // Load owner or save new owner. Ignore "zero" address used to mint.
   // In reality, we should always have an owner for a token that was previously minted,
   // reality is often surprising on-chain though!
   if (event.params.from != Address.zero()) {
-    log.warning("zero address",[])
+    log.warning("zero address",[]);
 
-    let from = Owner.load(event.params.from.toHex())
+    let from = Owner.load(event.params.from.toHex());
     if (from == null) {
-        from = new Owner(event.params.from.toHex())
-        from.save()
+        from = new Owner(event.params.from.toHex());
+        from.save();
     }
 
   }
 
   // Same as above, but checking the to address. "zero" here would be a burn.
   if (event.params.to != Address.zero()) {
-    let to = Owner.load(event.params.to.toHex())
-    if (to == null){
-        to = new Owner(event.params.to.toHex())
-        to.save()
+    let to = Owner.load(event.params.to.toHex());
+    if (to == null) {
+        to = new Owner(event.params.to.toHex());
+        to.save();
     }
   }
 
