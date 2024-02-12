@@ -1,5 +1,10 @@
 # Subgraph 101
 
+Tools to install:
+- Node / NPM
+- The Graph CLI: `npm install -g @graphprotocol/graph-cli`
+- Goldsky CLI: `curl https://goldsky.com | sh` : MacOS Silicon caveat: `/usr/sbin/softwareupdate --install-rosetta --agree-to-license`
+
 ## Basic subgraph with `graph init`
 
 We'll be indexing an [ERC-721 NFT contract](https://explorer.testnet.immutable.com/token/0xD2c0e3119C67d7A21fFC74383fB10e510F706A45) on Immutable Testnet.
