@@ -15,3 +15,6 @@ Caveat: Immutable isn't included in The Graph CLI's list of supported networks s
 
 Much of the code for this example was borrowed from [Benjythebee](https://github.com/Benjythebee/erc721-and-erc1155-subgraph).
 
+## Can we make it faster?
+
+The previous subgraph has a lot of eth_calls, can we get the same result w/o them?

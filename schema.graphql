@@ -1,28 +1,23 @@
 type Token @entity {
   id: ID!
-  contract: TokenContract!
-  tokenID: BigInt!
-  owners: [OwnerTokenLookup!]! @derivedFrom(field: "token")
-  mintTime: BigInt!
-  tokenURI: String!
-}
-
-type OwnerTokenLookup @entity {
-  id: ID!
   owner: Owner!
-  token: Token!
-  contract: TokenContract!
-  quantity: BigInt!
-}
-
-type TokenContract @entity {
-  id: ID!
-  name: String,
-  symbol: String,
-  tokens: [Token!]! @derivedFrom(field: "contract")
+  mintTime: BigInt!
+  transfers: [Transfer!]! @derivedFrom(field: "token")
+  transferCount: BigInt!
 }
 
 type Owner @entity {
   id: ID!
-  tokens: [OwnerTokenLookup!]! @derivedFrom(field: "owner")
+  tokens: [Token!]! @derivedFrom(field: "owner")
+  tokensOwned: BigInt!
+}
+
+type Transfer @entity
+{
+  id:                           ID!
+  token:                        Token!
+  from:                         Owner!
+  to:                           Owner!
+  transaction:                  Bytes!
+  timestamp:                    BigInt!
 }
