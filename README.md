@@ -11,11 +11,11 @@ What you'll need for your own:
 
 Caveat: Immutable isn't included in The Graph CLI's list of supported networks so some manual editing is needed.
 
-## Mutable data and aggregates
+## Mutable data and aggregates (upgraded branch)
 
 Much of the code for this example was borrowed from [Benjythebee](https://github.com/Benjythebee/erc721-and-erc1155-subgraph).
 
-## Can we make it faster?
+## Can we make it faster? (anotherway branch)
 
 The previous subgraph has a lot of eth_calls, can we get the same result w/o them?
 
