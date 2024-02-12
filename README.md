@@ -19,7 +19,7 @@ Much of the code for this example was borrowed from [Benjythebee](https://github
 
 The previous subgraph has a lot of eth_calls, can we get the same result w/o them?
 
-This subgraph borrwos a lot from the [POAP subgraph](https://github.com/poap-xyz/poap-subgraph).
+This subgraph borrows a lot from the [POAP subgraph](https://github.com/poap-xyz/poap-subgraph).
 
 ## Other fun subgraph resources
 
